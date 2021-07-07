@@ -7,7 +7,6 @@ Este projeto foi desenvolvido para atender um estacionamento, todo o BackEnd des
 
 
 ###PRECOS
-|------------------------------------------------------------------------------------------------------------------------------|
 |method	| url	                          |action	                                      |body                                    |
 |-------|-------------------------------|---------------------------------------------|----------------------------------------|
 |get   	|/precos	                      |lista todos os precos existentes	            |none                                    |
@@ -29,4 +28,3 @@ Este projeto foi desenvolvido para atender um estacionamento, todo o BackEnd des
 |       |                               |                                             |   "demais horas"" : ""12.00",          |
 |       |                               |                                             |   "inicio vingencia" : "2021-05-06"    |
 |       |                               |                                             |}"                                      |
-|------------------------------------------------------------------------------------------------------------------------------|
