@@ -9,8 +9,8 @@ Este projeto foi desenvolvido para atender um estacionamento, todo o BackEnd des
 
 
 
-## <i class="fa fa-gear fa-spin fa-2x" style="color: firebrick"></i> ROTAS DA API>
-As rotas ultilizadas são para definir o precos, e a entrada de e saida de um carro.
+## <i class="fa fa-gear fa-spin fa-2x" style="color: firebrick"></i> ROTAS DA API
+As rotas ultilizadas são para definir o precos, e a entrada de e saida de um carro.Veja a baixo todas rotas que existem e como as ultilizar.
 
 ### PRECOS
 |method	| url	                          |action	                                      |body                                    |
