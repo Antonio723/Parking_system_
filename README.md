@@ -12,14 +12,6 @@ Este projeto foi desenvolvido para atender um estacionamento, todo o BackEnd des
 |get   	|/precos	                      |lista todos os precos existentes	            |none                                    |
 |get	  |/precos/:id	                  |retorna o preco buscado	                    |none                                    |
 |get   	|/precos?TerminoVingencia=null	|Preco Valido no momento	                    |none                                    |
-|Post	  |/precos	                      |Cria um novo preco	                          |"{ <br> 
-"primeira hora"" : "10.00", <br>
-"demais horas" : "12.00", <br> 
-"inicio vingencia" : "2021-05-06"<br>
-}"                                    
+|Post	  |/precos	                      |Cria um novo preco	                          |"{ <br> "primeira hora"" : "10.00", <br>"demais horas" : "12.00", <br> "inicio vingencia" : "2021-05-06"<br>}"                                    
 |delete	|/precos/:id	                  |Torna um registro inativo no banco	          |none                                    |
-|put	  |/precos/:id	                  |Edita o preco (em erros de digitação)	      |"{                                      |
-|       |                               |                                             |   "primeira hora"" : ""10.00",         |
-|       |                               |                                             |   "demais horas"" : ""12.00",          |
-|       |                               |                                             |   "inicio vingencia" : "2021-05-06"    |
-|       |                               |                                             |}"                                      |
+|put	  |/precos/:id	                  |Edita o preco (em erros de digitação)	      |"{ <br>"primeira hora"" : ""10.00",  <br>"demais horas"" : ""12.00",<br>"inicio vingencia" : "2021-05-06" <br>}"  
