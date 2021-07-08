@@ -41,27 +41,26 @@ class Router
                     $this->params = [$url[2]];
                 } else {
                     http_response_code(400);
-                    echo json_encode(["erro" => "Parametro Invalido né"], JSON_UNESCAPED_UNICODE);
-                    var_dump($url);
+                    echo json_encode(["erro" => "Parametro Invalido"], JSON_UNESCAPED_UNICODE);
                     exit;
                 }
 
-                break;
+            break;
 
             case "POST":
                 $this->controllerMethod = "store";
-                break;
+            break;
 
             case "PUT":
                 $this->controllerMethod = "update";
                 $this->getParams($url);
-                break;
+            break;
                 
             case "DELETE":
                 $this->controllerMethod = "delete";
                 $this->getParams($url);
                 
-                break;
+            break;
 
             default:
                 echo "Método não habilitado";
