@@ -4,10 +4,12 @@ use App\Core\Model;
 
 class Precos{
     public $id;
-    public $descricao;
+    public $valorprimeriahora;
+    public $valordemaishoras;
 
-    public function listAll(){
-        $sql = "SELECT * FROM precos";
+    public function getLastRecord(){
+        $sql = "SELECT * FROM precos ORDER BY 1 DESC LIMIT 1";
+
         $stmt = Model::getConexao() -> prepare($sql);
         $stmt->execute();
 
@@ -17,6 +19,22 @@ class Precos{
         }else{
             return [];
         }
+    }
+
+    public function create(){
+        $sql = "INSERT INTO precos(primeiraHora, demaisHoras, iniciovingencia) VAlUES(?, ?, ?)";
+        $stmt = Model::getConexao() -> prepare($sql);
+        $stmt->bindValue(1, $this->primeiraHora);
+        $stmt->bindValue(2, $this->demaisHoras);
+        $stmt->bindValue(3, date("Y-m-d"));
+        
+        if($stmt->execute()){
+            $this->id = Model::getConexao()->LastInsertId();
+            return $this->id;
+        }else{
+            return false;
+        }
+        
     }
 
     public function findById($id){
@@ -33,21 +51,5 @@ class Precos{
         }
     }
 
-    public function create($firstHour, $secondHour, $init){
-        $sql = "INSERT INTO precos(primeiraHora, demaisHoras, iniciovingencia) VAlUES(?, ?, ?)";
-        $stmt = Model::getConexao() -> prepare($sql);
-        $stmt->bindValue(1, $firstHour);
-        $stmt->bindValue(2, $secondHour);
-        $stmt->bindValue(3, $init);
-        
-        $result = $stmt->execute();
-        
-        if($result){
-            return $result;
-        }else{
-            return false;
-        }
-        
-    }
 
 }

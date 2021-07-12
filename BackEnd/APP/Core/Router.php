@@ -2,8 +2,7 @@
 
 namespace App\Core;
 
-class Router
-{
+class Router{
     private $controller;
     private $httpMethod = "GET";
     private $controllerMethod;
@@ -17,12 +16,17 @@ class Router
         header("content-type: application/json");
         
         $url = $this->parseURL();
-
         if (isset($url[1]) && file_exists("../App/Controller/" . $url[1] . ".php")) {
+           
             $this->controller = $url[1];
             unset($url[1]);
-        } else{
-            echo json_encode(["erro" => "Parece que sua rquisição está errada, verifique e tente novamente"], JSON_UNESCAPED_UNICODE);
+
+        } elseif(empty($url[1])){
+            echo "Bem vindo a FastParking API";
+            exit;
+        }else{
+            echo json_encode(["erro" => "Parece que esse link está errado, verifique e tente novamente"], JSON_UNESCAPED_UNICODE);
+            exit;
         }
 
         require_once "../App/Controller/" . $this->controller . ".php";
@@ -88,5 +92,6 @@ class Router
         }
 
     }
+
 
 }

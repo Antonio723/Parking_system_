@@ -9,7 +9,6 @@ class Model{
    public static function getConexao(){
       if(!isset(self :: $conexao)){
          self :: $conexao = new \PDO("mysql:host=localhost; port=3306; dbname=api_fastparking;","root","manolo");
-      
       }
       return self::$conexao;
    }
